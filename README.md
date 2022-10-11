@@ -1,8 +1,8 @@
 # Mortgage Amortization Schedule & Payment Calculator
 
-----
 
-### Video Demo:  <URL HERE>
+### Video Demo:  
+    URL TBD...
 
 
 ### Description:
