@@ -2,12 +2,15 @@
 
 
 ### Video Demo
+
+I made this for my final project in Harvard's [CS50p - Introduction to Python](https://cs50.harvard.edu/python/2022/).
+
     URL TBD...
 
 
 ### Description
 
-This program has 4 main functions:
+This program has 4 main features:
 
 1. To retrieve & display **current interest rates** from (some) Canadian banks
 2. To determine the **mortgage payment amount**
@@ -15,7 +18,7 @@ This program has 4 main functions:
 4. To **export** the amortization schedule as a CSV file
 
 
-These features are implemented as a **graphical user interface** using [**PySimpleGUI**](https://www.pysimplegui.org/) library. Interest rates are retrieved from bank websites using [**Scrapy**](https://scrapy.org/) web scraping library.
+These features are implemented as a **graphical user interface** using [**PySimpleGUI**](https://www.pysimplegui.org/) library. Interest rates are retrieved from bank websites using [**Scrapy**](https://scrapy.org/) - a web scraping library for Python.  The `pip install` requirements are stated in `requirements.txt`.
 
 The calculations update instantly when any relevant input value is changed.
 
