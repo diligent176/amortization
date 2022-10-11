@@ -26,6 +26,16 @@ The interest rate can be entered manually, as web-scraping is an optional featur
 When **<u>E</u>xport to CSV** is clicked, the user is prompted by a File Save dialog to select a path and file name. The amortization schedule is then saved to the specified file name.
 
 
+### How to run it
+
+    # install dependencies
+    pip install scrapy
+    pip install PySimpleGUI
+
+    # run the program
+    python project.py
+
+
 ### Program Structure
 
 The program consists of 2 python modules, and a test module:
