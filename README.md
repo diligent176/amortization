@@ -3,9 +3,9 @@
 
 ### Video Demo
 
-I made this for my final project in Harvard's [CS50p - Introduction to Python](https://cs50.harvard.edu/python/2022/).
+My final project for Harvard's [CS50p - Introduction to Python](https://cs50.harvard.edu/python/2022/):
 
-    URL TBD...
+- https://youtu.be/9Ey9l8SHCmE
 
 
 ### Description
