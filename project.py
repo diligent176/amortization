@@ -1,15 +1,12 @@
 """
-project.py - must have a main function and at least three other functions,
-each of which accompanied by tests to be executed with pytest.
-Your main function must be in project.py in the root of your project.
-Your 3 required custom functions other than main must also be in project.py 
-and defined at the same indentation level as main (not nested under classes or functions).
-Your test functions must be in a file called test_project.py in the root of your project.
-Be sure they have the same name as your custom functions, prepended with test_ 
-(test_custom_function, where custom_function is a function you implemented in project.py).
-Implement additional classes and functions as you see fit beyond the minimum requirement.
-Any pip-installable libraries that your project requires must be listed, one per line,
-in a file called requirements.txt in the root of your project
+project.py - my final project for CSS50p
+https://github.com/diligent176/amortization/
+
+This program has 4 main features:
+ - To retrieve & display current interest rates from (some) Canadian banks
+ - To determine the mortgage payment amount
+ - To calculate & display a complete amortization schedule
+ - To export the amortization schedule as a CSV file
 """
 import PySimpleGUI as sg
 import spiders
@@ -70,7 +67,7 @@ def show_calculator():
         [sg.Text('Amortization Schedule    ', font='Verdana 18 bold', justification='c'),
          sg.Input(visible=False, enable_events=True, key='-CSVFILE-'), 
          sg.FileSaveAs(button_text="Export to CSV...", k="-EXPORT-", default_extension=".csv", file_types = (('CSV File', '*.csv'),), tooltip="Choose where to save the file")],
-        [sg.Table(values=[], headings=SCHEDULE_HEADERS, key="-AMORTSCHED-", num_rows=20, justification =('center'))],
+        [sg.Table(values=[], headings=SCHEDULE_HEADERS, key="-AMORTSCHED-", num_rows=20, justification=('center'))],
     ]
     
     layout = [
@@ -244,16 +241,20 @@ def mortgage_payment_calc(loan_amount, amortization_years, interest_rate, paymen
         return " DATA ERROR!"
 
 
+"""
+Accelerated weekly mortgage payment is when a MONTHLY payment is divided by four,
+and that amount is withdrawn weekly. Slighty higher than a normal weekly payment,
+but it massively reduces the amortization time and total interest amount
+"""
 def mortgage_payment_accelerated(loan_amount, amortization_years, interest_rate, payments_per_year):
-    # Accelerated weekly mortgage payment is when a monthly mortgage payment is divided by four,
-    # and that amount is withdrawn weekly. Slighty higher payment than weekly, but cuts down the amortization
     
-    # get MONTHLY payment the usual way
+    # get MONTHLY payment the usual way i.e. 12 payments per year
     try:
         monthly_payment = float(mortgage_payment_calc(loan_amount, amortization_years, interest_rate, 12))
     except ValueError:
         return " DATA ERROR!"
 
+    # get the accelerated payment by dividing a monthly payment by 2 or 4
     if payments_per_year == 52:
         # weekly accelerated = monthly payment / 4
         periodic_payment_amount = monthly_payment / 4

@@ -27,6 +27,7 @@ def test_mortgage_payment_calc():
 
 
 def test_mortgage_payment_calc_err():
+    # invalid inputs should return an error string
     assert mortgage_payment_calc('20000f', 30, 4.00, 12) == ' DATA ERROR!'
     assert mortgage_payment_calc(200000, 30, 0, 12) == ' DATA ERROR!'
 
@@ -37,6 +38,7 @@ def test_mortgage_payment_accelerated():
 
 
 def test_mortgage_payment_accelerated_err():
+    # invalid inputs should return an error string
     assert mortgage_payment_accelerated(500000, 25, 0, 52) == ' DATA ERROR!'
     assert mortgage_payment_accelerated(500000, 25, 2.3, 13) == ' DATA ERROR!'
 
@@ -64,6 +66,7 @@ def test_make_table_data_err():
     ]
 
     table_data = make_table_data(rate_list)
+    # table_data should be empty because the function trapped an exception
     assert table_data == []
 
 
