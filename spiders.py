@@ -1,9 +1,6 @@
 """
 spiders.py module
 scrapes Canadian banks for mortgage rates
-scrapy shell "https://www.rbcroyalbank.com/mortgages/mortgage-rates.html"
-scrapy shell "https://www.bmo.com/main/personal/mortgages/mortgage-rates/"
-scrapy shell "https://www.bmo.com/public-data/api/v1.1/mortgages.json"
 """
 import re
 import scrapy
